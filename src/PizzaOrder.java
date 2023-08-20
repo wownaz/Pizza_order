@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 public class PizzaOrder
 {
     public static void main(String [] args){
-        Scanner keyboard = new Scanner(System.in);	//Create a Scanner object to read input
+        Scanner keyboard = new Scanner(System.in);	//Scanner object to read input
         boolean discount = false;     		// flag, true if user is eligible for discount
         char choice;                  		// user's choice
         String input;                 		// user input
@@ -28,8 +28,7 @@ public class PizzaOrder
         input = keyboard.nextLine();
 
 // Discount	Eligibility
-        // Determine if user is eligible for discount by having birthday today
-        // ADD LINES HERE
+
         if (input.equals("y") ||input.equals("Y"))
         {
             discount = true;    }
@@ -37,8 +36,7 @@ public class PizzaOrder
         previewOrder(orders);	// view order info
 
 //  Repeated Menu Options
-        // Keep displaying the menu options until user is done
-        // ADD LINES HERE, modify the code below if necessary
+
         choice = 0;
         for(;choice!=1;) {
             printMenu();	// print action menu options
@@ -97,7 +95,7 @@ public class PizzaOrder
         String result = "";				// resultant String object to be returned
         final int toppingCost = 200;	// cost for one topping
 
-        //prompt user and get pizza size choice
+
         System.out.println("-----------------------------");
         System.out.println("Pizza Size (cm)      Cost");
         System.out.println("       20            1000 T");
@@ -108,8 +106,7 @@ public class PizzaOrder
         size = keyboard.nextInt();
 
 // Set Price
-        // Set the price based on the size of pizza ordered
-        // ADD LINES HERE
+
         switch (size) {
             case 20: cost+=1000;
                 break;
@@ -117,16 +114,16 @@ public class PizzaOrder
                 break;
             case 40: cost+=2000;
                 break;   }
-        //consume the remaining newline character
+
         keyboard.nextLine();
 
-        //prompt user and get topping choices one at a time
+
         System.out.println("-----------------------------");
         System.out.println("All pizzas come with cheese.");
         System.out.println("Additional toppings are 200T each," + " choose from:");
         System.out.println("- Meat, Sausage, Vegetables, Mushroom");
 
-        //if topping is desired, add to topping list and number of toppings
+
         System.out.print("> Do you want Meat?  (Y/N):  ");
         input = keyboard.nextLine();
         choice = input.charAt(0);
@@ -161,12 +158,11 @@ public class PizzaOrder
         }
 
 //  Toppings Cost
-        // Add additional toppings cost to cost of pizza
-        // ADD LINES HERE
+
         cost = cost +toppingCost* numberOfToppings;
-        //save the order information
+
         result += size + "cm pizza, " + toppings;
-        // add the cost to result
+
         result += ":" + cost;
         return result;
     }
@@ -179,8 +175,6 @@ public class PizzaOrder
         System.out.println("Your order: ");
 
 //  Order Info
-        // Print individual order info
-        // ADD LINES HERE, modify the code below
         int i;
         for(i=0; i<orders.length; i++)
         {
@@ -191,8 +185,6 @@ public class PizzaOrder
         System.out.println("Total: " + getTotalCost(orders) + " T");
     }
 
-// Total Cost
-    // Implement the method below
     /**
      Parses the orders array to calculate the total cost
      */
@@ -225,13 +217,11 @@ public class PizzaOrder
         System.out.println("#############################################");
         previewOrder(orders);
 
-        // calculate total cost
+
         int cost = getTotalCost(orders);
 
 // Discount Calculation
-        // Apply discount only if user is eligible
-        // update and print the cost with discount
-        // ADD LINES HERE
+
 
         if(discount==true){
 
@@ -253,20 +243,16 @@ public class PizzaOrder
         System.out.println("Order ID: " + generateCode());	// generates random ID
     }
 
-// Current Date
-    // Implement the method below
+
     /**
      Prints the current system date in DD.MM.YYYY format
      HINT: https://www.javatpoint.com/java-get-current-date
      */
     public static void printCurrentDate(){
-        // print current date
         Date date = new Date();
         SimpleDateFormat formatter = new SimpleDateFormat("dd.MM.yyyy");
         System.out.print(formatter.format(date));   }
 
-// Current Time
-    // Implement the method below
     /**
      Prints the current system time in HH:MM format
      */
@@ -282,7 +268,7 @@ public class PizzaOrder
      Ex: "1097", "0083"
      */
     public static String generateCode(){
-        // return 4-digit random code
+
         String lala = "";
         int i;
         for(i = 0;i< 4; i++) {
