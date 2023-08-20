@@ -261,8 +261,7 @@ public class PizzaOrder
         SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
         System.out.print(formatter.format(date));   }
 
-// Generate Code
-    // Implement the method below
+
     /**
      Generates a random 4-digit number and returns as a String consisting of 4 digits fills with leading zeros if necessary
      Ex: "1097", "0083"
